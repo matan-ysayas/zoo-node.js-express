@@ -1,57 +1,57 @@
 const employees = require("../models/employee-model");
 
 const getEmployees = async (req, res) => {
-  await animals
+  await employees
     .find()
-    .then(animals => {
-      res.status(200).json(animals);
+    .then(employees => {
+      res.status(200).json(employees);
     })
     .catch((err) => {
       res.status(500).json({
-        massage: "failed to get animals",
+        massage: "failed to get Employee",
         error: err,
       });
     });
 };
 
 const getEmployeeById = async (req, res) => {
-  await animals
+  await employees
     .findById(req.params.id)
     .then(animal => {
       res.status(200).json(animal);
     })
     .catch((err) => {
-      res.status(500).json({ message: "failed to get animal", error: err });
+      res.status(500).json({ message: "failed to get Employee", error: err });
     });
 };
 const addEmployee = async (req, res) => {
-  await animals
+  await employees
     .create(req.body)
     .then(animal => {
       res.status(200).json(animal);
     })
     .catch((err) => {
-      res.status(500).json({ message: "failed to add animal", error: err });
+      res.status(500).json({ message: "failed to add Employee", error: err });
     });
 };
 const updateEmployee = async (req, res) => {
-  await animals
+  await employees
     .findByIdAndUpdate(req.params.id, req.body, { new: true })
     .then(animal => {
       res.status(200).json(animal);
     })
     .catch((err) => {
-      res.status(500).json({ message: "failed to update animal", error: err });
+      res.status(500).json({ message: "failed to update Employee", error: err });
     });
 };
 const deleteEmployee = async (req, res) => {
-  animals
+  employees
     .findByIdAndDelete(req.params.id)
     .then(() => {
-      res.status(200).json({ message: "student deleted" });
+      res.status(200).json({ message: "Employee delete" });
     })
     .catch((err) => {
-      res.status(500).json({ message: "failed to delete animal", error: err });
+      res.status(500).json({ message: "failed to delete Employee", error: err });
     });
 };
 
