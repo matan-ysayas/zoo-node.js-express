@@ -3,7 +3,7 @@ const animals = require("../models/animal-model");
 const getAnimals = async (req, res) => {
   await animals
     .find()
-    .then((animals) => {
+    .then(animals => {
       res.status(200).json(animals);
     })
     .catch((err) => {
@@ -17,7 +17,7 @@ const getAnimals = async (req, res) => {
 const getAnimalById = async (req, res) => {
   await animals
     .findById(req.params.id)
-    .then((animal) => {
+    .then(animal => {
       res.status(200).json(animal);
     })
     .catch((err) => {
@@ -27,7 +27,7 @@ const getAnimalById = async (req, res) => {
 const addAnimal = async (req, res) => {
   await animals
     .create(req.body)
-    .then((animal) => {
+    .then(animal => {
       res.status(200).json(animal);
     })
     .catch((err) => {
@@ -37,7 +37,7 @@ const addAnimal = async (req, res) => {
 const updateAnimal = async (req, res) => {
   await animals
     .findByIdAndUpdate(req.params.id, req.body, { new: true })
-    .then((animal) => {
+    .then(animal => {
       res.status(200).json(animal);
     })
     .catch((err) => {
