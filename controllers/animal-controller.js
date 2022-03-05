@@ -31,7 +31,7 @@ const addAnimal = async (req, res) => {
       res.status(200).json(animal);
     })
     .catch((err) => {
-      res.status(500).json({ message: "failed to get animal", error: err });
+      res.status(500).json({ message: "failed to add animal", error: err });
     });
 };
 const updateAnimal = async (req, res) => {
