@@ -10,11 +10,10 @@ const port=process.env.PORT;
 const animalRoute=require('./routes/animal-route');
 
 
-
+app.use('/animal',animalRoute);
 app.get('/',(req,res)=>{
     res.send({ msg: "server online" })
 })
 
 app.listen(port);
 
-app.use('/animal',animalRoute);
