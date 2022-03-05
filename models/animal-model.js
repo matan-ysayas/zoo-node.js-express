@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 const schema = mongoose.Schema;
 
-const Animal = new schema({
-  name: { String, required: true },
-  dateOfBirth: { String, required: true },
-  cageNumber: { Number, required: true },
-  gender: { String, required: true },
-  type: { String, require: true },
+const Animal =  new schema({
+  name: {type:String, required: true },
+  dateOfBirth: {type:String, required: true },
+  cageNumber: {type:Number, required: true },
+  gender: {type:String, required: true },
+  type: {type:String, require: true },
 },
 { timestamps: true }
 );
