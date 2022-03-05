@@ -22,13 +22,3 @@ app.get('/',(req,res)=>{
 })
 
 app.listen(port);
-
-if (process.env.NODE_ENV === "production") {
-    app.use(
-      express.static(path.join(__dirname, "../client-app/build")),
-      app.get("*", (req, res) => {
-        res.sendFile(path.join(__dirname, "../client-app/build", "index"));
-      })
-    );
-  }
-  
